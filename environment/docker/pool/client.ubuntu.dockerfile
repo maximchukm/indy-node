@@ -1,4 +1,4 @@
-FROM indycore
+FROM --platform=linux/amd64 indycore
 
 ARG ips
 ARG nodecnt

@@ -33,9 +33,6 @@ fi
 
 echo "Creating a new node ${NODE_NAME} ${NIP} ${NPORT} ${CIP} ${CPORT}"
 
-echo "Setting up docker with systemd"
-docker run -d --security-opt seccomp=unconfined --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:ro --platform=linux/amd64 -t solita/ubuntu-systemd setup
-
 echo "Building indybase"
 docker build -t 'indybase' -f ${SCRIPT_DIR}/base.systemd.ubuntu.dockerfile $SCRIPT_DIR
 echo "Building indycore for user ${USER_ID}"

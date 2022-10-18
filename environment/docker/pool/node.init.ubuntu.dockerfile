@@ -1,5 +1,5 @@
 # Development
-FROM indycore
+FROM --platform=linux/amd64 indycore
 
 ARG nodename
 ARG nip
